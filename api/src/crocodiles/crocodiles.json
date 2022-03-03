@@ -1,0 +1,17 @@
+[
+    {
+        "type": "Big croc",
+        "name": "Steven",
+        "image": "http://localhost:3001/images/big.jpeg"
+    },
+    {
+        "type": "Smol croc",
+        "name": "Pam",
+        "image": "http://localhost:3001/images/smol.jpeg"
+    },
+    {
+        "type": "Long croc",
+        "name": "Line",
+        "image": "http://localhost:3001/images/long.jpeg"
+    }
+]

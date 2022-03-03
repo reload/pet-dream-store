@@ -4,6 +4,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CatsModule } from './cats/cats.module';
+import { CrocodilesModule } from './crocodiles/crocodiles.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { CatsModule } from './cats/cats.module';
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql',
       installSubscriptionHandlers: true,
-    })
+    }),
+    CrocodilesModule
   ],
   controllers: [AppController],
   providers: [AppService],

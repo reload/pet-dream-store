@@ -3,7 +3,7 @@ import { CatsService } from './cats.service';
 import { Cat } from './entities/cat.entity';
 
 interface CatParams extends ParameterDecorator {
-  id: number
+  id: number;
 }
 
 @Controller('cats')

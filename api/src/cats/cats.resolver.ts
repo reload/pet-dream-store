@@ -12,5 +12,4 @@ export class CatsResolver {
   findOne(@Args('id', { type: () => Int }) id: number): Promise<Cat> {
     return this.catsService.findOne(id);
   }
-
 }

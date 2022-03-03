@@ -5,9 +5,8 @@ import { Cat } from './entities/cat.entity';
 
 @Injectable()
 export class CatsService {
-
   private loadCat(): Promise<Cat> {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       return setTimeout(() => {
         const cat = new Cat();
         cat.type = 'Bengal Cat';
@@ -21,5 +20,4 @@ export class CatsService {
   findOne(id: number): Promise<Cat> {
     return this.loadCat();
   }
-
 }

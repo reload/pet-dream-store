@@ -1,17 +1,19 @@
-[
+{
+  "cats": [
     {
-        "type": "Bengal Cat",
-        "name": "Steven",
-        "image": "http://localhost:3001/images/bengal.jpg"
+      "type": "Bengal Cat",
+      "name": "Steven",
+      "image": "http://localhost:3001/images/bengal.jpg"
     },
     {
-        "type": "Siamese cat",
-        "name": "Pam",
-        "image": "http://localhost:3001/images/siamese.jpeg"
+      "type": "Siamese cat",
+      "name": "Pam",
+      "image": "http://localhost:3001/images/siamese.jpeg"
     },
     {
-        "type": "Fluffy cat",
-        "name": "Line",
-        "image": "http://localhost:3001/images/fluffy.jpeg"
+      "type": "Fluffy cat",
+      "name": "Line",
+      "image": "http://localhost:3001/images/fluffy.jpeg"
     }
-]
+  ]
+}

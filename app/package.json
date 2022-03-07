@@ -12,6 +12,7 @@
     "@types/jest": "^27.4.1",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
+    "dotenv": "^16.0.0",
     "graphql": "^16.3.0",
     "graphql-tag": "^2.12.6",
     "react": "^17.0.2",
@@ -26,7 +27,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate": "graphql-codegen"
+    "generate:dev": "graphql-codegen --require dotenv/config",
+    "generate:production": "graphql-codegen --require dotenv/config --dotenv_config_path .production.env"
   },
   "eslintConfig": {
     "extends": [

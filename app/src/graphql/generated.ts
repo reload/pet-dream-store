@@ -43,13 +43,63 @@ export type Cat = {
   type: Scalars['String'];
 };
 
+export type CreateCrocodileInput = {
+  /** Example field (placeholder) */
+  exampleField: Scalars['Int'];
+};
+
+export type Crocodile = {
+  __typename?: 'Crocodile';
+  /** The image of the croc */
+  img: Scalars['String'];
+  /** The name of the croc */
+  name: Scalars['String'];
+  /** The type of croc */
+  type: Scalars['String'];
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  createCrocodile: Crocodile;
+  removeCrocodile: Crocodile;
+  updateCrocodile: Crocodile;
+};
+
+
+export type MutationCreateCrocodileArgs = {
+  createCrocodileInput: CreateCrocodileInput;
+};
+
+
+export type MutationRemoveCrocodileArgs = {
+  id: Scalars['Int'];
+};
+
+
+export type MutationUpdateCrocodileArgs = {
+  updateCrocodileInput: UpdateCrocodileInput;
+};
+
 export type Query = {
   __typename?: 'Query';
   cat: Cat;
+  crocodile: Crocodile;
+  crocodiles: Array<Crocodile>;
 };
 
 
 export type QueryCatArgs = {
+  id: Scalars['Int'];
+};
+
+
+export type QueryCrocodileArgs = {
+  id: Scalars['Int'];
+};
+
+export type UpdateCrocodileInput = {
+  /** Example field (placeholder) */
+  exampleField?: InputMaybe<Scalars['Int']>;
   id: Scalars['Int'];
 };
 

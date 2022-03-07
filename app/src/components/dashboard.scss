@@ -1,0 +1,29 @@
+// should I be adding new vriables here or upstream in the index.scss so that other
+// components can also access them ?
+$scarlet: #f05020;
+$scarlet-light: #ff916f;
+$violet: #8e0bb6;
+$violet-light: #d6a4e6;
+
+.navbar {
+  width: 100%;
+
+  &__headline {
+    background-color: $violet;
+    padding: 2rem 2rem 0 2rem;
+  }
+  &__nav {
+  }
+  hr {
+    color: white;
+  }
+  h1 {
+    margin: 0;
+    color: $violet-light;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}

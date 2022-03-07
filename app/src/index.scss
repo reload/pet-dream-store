@@ -1,0 +1,22 @@
+$font-fam: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+  Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$dark: #333;
+$shadow: rgba(51, 51, 51, 0.5);
+$background: #fde9e6;
+$background-darker: #e7d2cf;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-fam;
+  background-color: $background;
+  color: $dark;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@import "./components/dashboard.scss";
+@import "./components/cardGrid.scss";

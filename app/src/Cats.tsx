@@ -4,21 +4,22 @@ import { useCatQuery, CatQuery } from "./graphql/generated";
 gql`
   query cat($id: Int!) {
     cat(id: $id) {
-      type,
-      name,
+      type
+      name
       img
     }
-  }`
+  }
+`;
 
 function Cats() {
-  const { status, isFetching, data } = useCatQuery({id: 3 });
+  const { status, isFetching, data } = useCatQuery({ id: 3 });
   let output = null;
 
-  if(isFetching) {
-    output = <img src={require('./loader.gif')} />;
+  if (isFetching) {
+    output = <img src={require("./loader.gif")} />;
   }
 
-  if(status === 'success' && data) {
+  if (status === "success" && data) {
     const { cat: result } = data as CatQuery;
 
     output = (
@@ -26,7 +27,9 @@ function Cats() {
         <p>
           You have loaded a cat of the type: <strong>{result.type}</strong>
         </p>
-        <p><img src={result.img} width="300px"/></p>
+        <p>
+          <img src={result.img} width="300px" />
+        </p>
       </>
     );
   }

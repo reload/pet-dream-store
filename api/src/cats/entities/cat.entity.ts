@@ -1,15 +1,10 @@
 import { ObjectType, Field } from '@nestjs/graphql';
+import { AnimalInterface } from 'src/types';
 
-type catType = 'Persian Cat' | 'Maine Coon' | 'Bengal Cat';
-
-interface CatInterface {
-  type: catType;
-  name: string;
-  img: string;
-}
+export type catType = 'Persian Cat' | 'Maine Coon' | 'Bengal Cat';
 
 @ObjectType()
-export class Cat implements CatInterface {
+export class Cat implements AnimalInterface {
   @Field({ description: 'The type of cat' })
   type: catType;
   @Field({ description: 'The name of the cat' })

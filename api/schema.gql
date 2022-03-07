@@ -24,10 +24,22 @@ type Crocodile {
   img: String!
 }
 
+type Animal {
+  """The type of animal"""
+  type: String!
+
+  """The name of the animal"""
+  name: String!
+
+  """The image of the animal"""
+  img: String!
+}
+
 type Query {
   cat(id: Int!): Cat!
   crocodiles: [Crocodile!]!
   crocodile(id: Int!): Crocodile!
+  animals: [Animal!]!
 }
 
 type Mutation {

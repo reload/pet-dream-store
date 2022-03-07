@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { AnimalInterface } from 'src/types';
 import { CreateCatInput } from './dto/create-cat.input';
 import { UpdateCatInput } from './dto/update-cat.input';
 import { Cat } from './entities/cat.entity';
@@ -19,5 +20,16 @@ export class CatsService {
 
   findOne(id: number): Promise<Cat> {
     return this.loadCat();
+  }
+
+  findAll(): Cat[] {
+    const cat = new Cat();
+    cat.type = 'Bengal Cat';
+    cat.name = 'Allan';
+    cat.img = 'http://localhost:3001/images/bengal.jpg';
+
+    return [
+      cat
+    ];
   }
 }

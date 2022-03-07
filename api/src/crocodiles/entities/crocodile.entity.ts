@@ -1,17 +1,12 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { AnimalInterface } from 'src/types';
 
-//type crocType = 'Big' | 'Smol' | 'Long';
-
-interface CrocInterface {
-  type: string;
-  name: string;
-  img: string;
-}
+export type crocodileType = 'Nile Crocodile' | 'Marsh Crocodile' | 'Orinoco Crocodile';
 
 @ObjectType()
-export class Crocodile implements CrocInterface {
+export class Crocodile implements AnimalInterface {
   @Field({ description: 'The type of croc' })
-  type: string;
+  type: crocodileType;
   @Field({ description: 'The name of the croc' })
   name: string;
   @Field({ description: 'The image of the croc' })

@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CatsModule } from './cats/cats.module';
 import { CrocodilesModule } from './crocodiles/crocodiles.module';
+import { AnimalsModule } from './animals/animals.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { CrocodilesModule } from './crocodiles/crocodiles.module';
       installSubscriptionHandlers: true,
     }),
     CrocodilesModule,
+    AnimalsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -14,8 +14,14 @@ type Cat {
 }
 
 type Crocodile {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  """The type of croc"""
+  type: String!
+
+  """The name of the croc"""
+  name: String!
+
+  """The image of the croc"""
+  img: String!
 }
 
 type Query {

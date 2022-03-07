@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateCrocodileInput } from './dto/create-crocodile.input';
 import { UpdateCrocodileInput } from './dto/update-crocodile.input';
+import crocData from './crocodiles.json';
 
 @Injectable()
 export class CrocodilesService {
@@ -9,7 +10,23 @@ export class CrocodilesService {
   }
 
   findAll() {
-    return `This action returns all crocodiles`;
+    return [
+      {
+        type: 'Big croc',
+        name: 'Steven',
+        img: 'http://localhost:3001/images/big.jpeg',
+      },
+      {
+        type: 'Smol croc',
+        name: 'Pam',
+        img: 'http://localhost:3001/images/smol.jpeg',
+      },
+      {
+        type: 'Long croc',
+        name: 'Line',
+        img: 'http://localhost:3001/images/long.jpeg',
+      },
+    ];
   }
 
   findOne(id: number) {

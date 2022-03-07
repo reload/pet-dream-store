@@ -14,7 +14,7 @@ import { CrocodilesModule } from './crocodiles/crocodiles.module';
       autoSchemaFile: 'schema.gql',
       installSubscriptionHandlers: true,
     }),
-    CrocodilesModule
+    CrocodilesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -9,7 +9,9 @@ export class CrocodilesResolver {
   constructor(private readonly crocodilesService: CrocodilesService) {}
 
   @Mutation(() => Crocodile)
-  createCrocodile(@Args('createCrocodileInput') createCrocodileInput: CreateCrocodileInput) {
+  createCrocodile(
+    @Args('createCrocodileInput') createCrocodileInput: CreateCrocodileInput,
+  ) {
     return this.crocodilesService.create(createCrocodileInput);
   }
 
@@ -24,8 +26,13 @@ export class CrocodilesResolver {
   }
 
   @Mutation(() => Crocodile)
-  updateCrocodile(@Args('updateCrocodileInput') updateCrocodileInput: UpdateCrocodileInput) {
-    return this.crocodilesService.update(updateCrocodileInput.id, updateCrocodileInput);
+  updateCrocodile(
+    @Args('updateCrocodileInput') updateCrocodileInput: UpdateCrocodileInput,
+  ) {
+    return this.crocodilesService.update(
+      updateCrocodileInput.id,
+      updateCrocodileInput,
+    );
   }
 
   @Mutation(() => Crocodile)

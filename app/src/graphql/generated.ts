@@ -33,6 +33,16 @@ export type Scalars = {
   Float: number;
 };
 
+export type Animal = {
+  __typename?: 'Animal';
+  /** The image of the animal */
+  img: Scalars['String'];
+  /** The name of the animal */
+  name: Scalars['String'];
+  /** The type of animal */
+  type: Scalars['String'];
+};
+
 export type Cat = {
   __typename?: 'Cat';
   /** The image of the cat */
@@ -82,6 +92,7 @@ export type MutationUpdateCrocodileArgs = {
 
 export type Query = {
   __typename?: 'Query';
+  animals: Array<Animal>;
   cat: Cat;
   crocodile: Crocodile;
   crocodiles: Array<Crocodile>;
@@ -110,6 +121,11 @@ export type CatQueryVariables = Exact<{
 
 export type CatQuery = { __typename?: 'Query', cat: { __typename?: 'Cat', type: string, name: string, img: string } };
 
+export type AllAnimalsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AllAnimalsQuery = { __typename?: 'Query', animals: Array<{ __typename?: 'Animal', type: string, name: string, img: string }> };
+
 
 export const CatDocument = `
     query cat($id: Int!) {
@@ -130,5 +146,26 @@ export const useCatQuery = <
     useQuery<CatQuery, TError, TData>(
       ['cat', variables],
       fetcher<CatQuery, CatQueryVariables>(CatDocument, variables),
+      options
+    );
+export const AllAnimalsDocument = `
+    query allAnimals {
+  animals {
+    type
+    name
+    img
+  }
+}
+    `;
+export const useAllAnimalsQuery = <
+      TData = AllAnimalsQuery,
+      TError = unknown
+    >(
+      variables?: AllAnimalsQueryVariables,
+      options?: UseQueryOptions<AllAnimalsQuery, TError, TData>
+    ) =>
+    useQuery<AllAnimalsQuery, TError, TData>(
+      variables === undefined ? ['allAnimals'] : ['allAnimals', variables],
+      fetcher<AllAnimalsQuery, AllAnimalsQueryVariables>(AllAnimalsDocument, variables),
       options
     );

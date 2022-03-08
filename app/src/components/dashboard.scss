@@ -11,8 +11,18 @@ $violet-light: #d6a4e6;
   &__headline {
     background-color: $violet;
     padding: 2rem 2rem 0 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    span {
+      padding: 1rem 0 1rem 1rem;
+    }
   }
   hr {
     color: white;
@@ -21,9 +31,4 @@ $violet-light: #d6a4e6;
     margin: 0;
     color: $violet-light;
   }
-}
-
-.flex {
-  display: flex;
-  flex-direction: row;
 }

@@ -9,15 +9,12 @@ import { CrocodilesService } from 'src/crocodiles/crocodiles.service';
 
 @Resolver(() => Animal)
 export class AnimalsResolver {
-  catService: CatsService;
-  crocodileService: CrocodilesService;
+  constructor(
+    private catService: CatsService,
+    private crocodileService: CrocodilesService,
+  ) {}
 
-  constructor() {
-    this.catService = new CatsService();
-    this.crocodileService = new CrocodilesService();
-  }
-
-  @Query(() => [Animal], { name: 'animals' })
+  @Query(() => [Animal], { name: 'animals', nullable: 'items' })
   findAll(): AnimalInterface[] {
     return [
       ...this.catService.findAll(),

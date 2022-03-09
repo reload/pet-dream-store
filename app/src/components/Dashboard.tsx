@@ -1,8 +1,10 @@
 import { gql } from "graphql-request";
 import { useAllAnimalsQuery } from "../graphql/generated";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CardGrid from "./CardGrid";
 
+// graphQL query definition
+// TODO - move this to its own file
 gql`
   query allAnimals {
     animals {
@@ -14,8 +16,10 @@ gql`
 `;
 
 const Dashboard = () => {
+  // call for data + status of the transaction
   const { status, isFetching, data } = useAllAnimalsQuery();
 
+  // navbar, filters, content(CardGrid component)
   return (
     <>
       <div className="navbar">
@@ -30,8 +34,7 @@ const Dashboard = () => {
       </div>
 
       <div className="filters">This is where the filters will be</div>
-
-      <CardGrid />
+      <CardGrid status={status} isFetching={isFetching} data={data} />
     </>
   );
 };

@@ -92,7 +92,7 @@ export type MutationUpdateCrocodileArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  animals: Array<Animal>;
+  animals: Array<Maybe<Animal>>;
   cat: Cat;
   crocodile: Crocodile;
   crocodiles: Array<Crocodile>;
@@ -124,7 +124,7 @@ export type CatQuery = { __typename?: 'Query', cat: { __typename?: 'Cat', type: 
 export type AllAnimalsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AllAnimalsQuery = { __typename?: 'Query', animals: Array<{ __typename?: 'Animal', type: string, name: string, img: string }> };
+export type AllAnimalsQuery = { __typename?: 'Query', animals: Array<{ __typename?: 'Animal', type: string, name: string, img: string } | null> };
 
 
 export const CatDocument = `

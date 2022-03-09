@@ -1,6 +1,5 @@
 import React from "react";
 import { AllAnimalsQuery } from "../graphql/generated";
-import { AnimalData, Animal } from "./Interfaces";
 
 // it is necessary to define the prop types here before they are recieved
 interface Props {
@@ -15,9 +14,6 @@ const CardGrid: React.FC<Props> = ({ status, isFetching, data }) => {
     return <div>Loading</div>;
   }
 
-  // I need to start using something else over console logs
-  // asked some programmer friends what tools they use
-  // What do you use Mikkel?
   // console.log(`status: ${status}`);
   // console.log(`isFetching: ${isFetching}`);
   // console.log(`data: ${JSON.stringify(data)}`);

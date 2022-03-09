@@ -1,9 +1,27 @@
+// fonts
 $font-fam: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
   Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+// colors
 $dark: #333;
 $shadow: rgba(51, 51, 51, 0.5);
 $background: #fde9e6;
 $background-darker: #e7d2cf;
+$scarlet: #f05020;
+$scarlet-light: #ff916f;
+$scarlet-light-extra: #ffc6b5;
+$violet: #8e0bb6;
+$violet-light: #d6a4e6;
+$violet-light-extra: #edcbf8;
+
+// breakpoints
+$breakpoint-tablet-s-min: 426px;
+$breakpoint-tablet-s-max: 600px;
+$breakpoint-tablet-l-min: 601px;
+$breakpoint-tablet-l-max: 1023px;
+$breakpoint-desktop-s-min: 1024px;
+$breakpoint-desktop-s-max: 1500px;
+$breakpoint-desktop-l-min: 1501px;
 
 * {
   box-sizing: border-box;

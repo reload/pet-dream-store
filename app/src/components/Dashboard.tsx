@@ -1,6 +1,5 @@
 import { gql } from "graphql-request";
 import { useAllAnimalsQuery } from "../graphql/generated";
-import React, { useEffect, useState } from "react";
 import CardGrid from "./CardGrid";
 
 // graphQL query definition

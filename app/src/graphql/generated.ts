@@ -114,40 +114,12 @@ export type UpdateCrocodileInput = {
   id: Scalars['Int'];
 };
 
-export type CatQueryVariables = Exact<{
-  id: Scalars['Int'];
-}>;
-
-
-export type CatQuery = { __typename?: 'Query', cat: { __typename?: 'Cat', type: string, name: string, img: string } };
-
 export type AllAnimalsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type AllAnimalsQuery = { __typename?: 'Query', animals: Array<{ __typename?: 'Animal', type: string, name: string, img: string } | null> };
 
 
-export const CatDocument = `
-    query cat($id: Int!) {
-  cat(id: $id) {
-    type
-    name
-    img
-  }
-}
-    `;
-export const useCatQuery = <
-      TData = CatQuery,
-      TError = unknown
-    >(
-      variables: CatQueryVariables,
-      options?: UseQueryOptions<CatQuery, TError, TData>
-    ) =>
-    useQuery<CatQuery, TError, TData>(
-      ['cat', variables],
-      fetcher<CatQuery, CatQueryVariables>(CatDocument, variables),
-      options
-    );
 export const AllAnimalsDocument = `
     query allAnimals {
   animals {

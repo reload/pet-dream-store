@@ -1,0 +1,27 @@
+.navbar {
+  width: 100%;
+
+  &__headline {
+    background-color: $violet;
+    padding: 2rem 2rem 0 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    span {
+      padding: 1rem 0 1rem 1rem;
+    }
+  }
+  hr {
+    color: white;
+  }
+  h1 {
+    margin: 0;
+    color: $violet-light;
+  }
+}

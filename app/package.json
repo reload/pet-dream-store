@@ -55,7 +55,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",
     "concurrently": "^7.0.0",
-    "parcel": "^2.3.2",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "parcel-resolver-ignore": "^2.0.0"
   }
 }

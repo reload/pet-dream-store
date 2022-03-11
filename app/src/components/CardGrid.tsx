@@ -15,30 +15,30 @@ const CardGrid: React.FC<Props> = ({ status, isFetching, data }) => {
     return <div>Loading</div>;
   }
 
-  // console.log(`status: ${status}`);
-  // console.log(`isFetching: ${isFetching}`);
-  // console.log(`data: ${JSON.stringify(data)}`);
-
   // TODO: make sure that the description does not get cut off when there
   // is too much text
+
+  if (!data.animals) {
+    return null;
+  }
 
   return (
     <div className="animal_grid">
       {data.animals.map((animal, index) => {
         return (
           <div className="card" key={index}>
-            <img className="card__image" src={animal?.img} alt={animal?.name} />
+            <img className="card__image" src={animal.img} alt={animal.name} />
             <div className="card__gradient"></div>
-            <h2 className="card__headline">{animal?.name}</h2>
-            <span className="card__type">{animal?.type}</span>
+            <h2 className="card__headline">{animal.name}</h2>
+            <span className="card__type">{animal.type}</span>
             <Animal
-              name={`${animal?.animal === "crocodile" ? "alligator" : "tiger"}`}
+              name={`${animal.animal === "crocodile" ? "alligator" : "tiger"}`}
               color={`${
-                animal?.animal === "crocodile" ? "#7bb853" : "#f0cc55"
+                animal.animal === "crocodile" ? "#7bb853" : "#f0cc55"
               }`}
             />
             <div className="card__body">
-              <p className="card__body__description">{animal?.description}</p>
+              <p className="card__body__description">{animal.description}</p>
             </div>
           </div>
         );

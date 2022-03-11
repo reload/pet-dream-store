@@ -72,7 +72,7 @@ type Query {
   cat(id: Int!): Cat!
   crocodiles: [Crocodile!]!
   crocodile(id: Int!): Crocodile!
-  animals: [Animal]!
+  animals: [Animal!]
 }
 
 type Mutation {

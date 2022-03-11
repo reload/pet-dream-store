@@ -14,7 +14,7 @@ export class AnimalsResolver {
     private crocodileService: CrocodilesService,
   ) {}
 
-  @Query(() => [Animal], { name: 'animals', nullable: 'items' })
+  @Query(() => [Animal], { name: 'animals', nullable: true })
   findAll(): AnimalInterface[] {
     return [
       ...this.catService.findAll(),

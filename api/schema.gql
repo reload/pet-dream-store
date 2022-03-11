@@ -6,11 +6,23 @@ type Cat {
   """The type of cat"""
   type: String!
 
+  """The type of animal"""
+  animal: String!
+
   """The name of the cat"""
   name: String!
 
   """The image of the cat"""
   img: String!
+
+  """The description of the cat"""
+  description: String!
+
+  """The size of the cat"""
+  size: Float!
+
+  """The weigth of the cat"""
+  weigth: Float!
 }
 
 type Crocodile {
@@ -22,24 +34,45 @@ type Crocodile {
 
   """The image of the croc"""
   img: String!
+
+  """The description of the croc"""
+  description: String!
+
+  """The size of the croc"""
+  size: Float!
+
+  """The weigth of the croc"""
+  weigth: Float!
 }
 
 type Animal {
-  """The type of animal"""
+  """The species of animal"""
   type: String!
+
+  """The type of animal"""
+  animal: String!
 
   """The name of the animal"""
   name: String!
 
   """The image of the animal"""
   img: String!
+
+  """The description of the animal"""
+  description: String!
+
+  """The size of the animal"""
+  size: Float!
+
+  """The weigth of the animal"""
+  weigth: Float!
 }
 
 type Query {
   cat(id: Int!): Cat!
   crocodiles: [Crocodile!]!
   crocodile(id: Int!): Crocodile!
-  animals: [Animal]!
+  animals: [Animal!]
 }
 
 type Mutation {

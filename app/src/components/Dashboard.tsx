@@ -8,8 +8,12 @@ gql`
   query allAnimals {
     animals {
       type
+      animal
       name
       img
+      description
+      size
+      weigth
     }
   }
 `;

@@ -35,22 +35,38 @@ export type Scalars = {
 
 export type Animal = {
   __typename?: 'Animal';
+  /** The type of animal */
+  animal: Scalars['String'];
+  /** The description of the animal */
+  description: Scalars['String'];
   /** The image of the animal */
   img: Scalars['String'];
   /** The name of the animal */
   name: Scalars['String'];
-  /** The type of animal */
+  /** The size of the animal */
+  size: Scalars['Float'];
+  /** The species of animal */
   type: Scalars['String'];
+  /** The weigth of the animal */
+  weigth: Scalars['Float'];
 };
 
 export type Cat = {
   __typename?: 'Cat';
+  /** The type of animal */
+  animal: Scalars['String'];
+  /** The description of the cat */
+  description: Scalars['String'];
   /** The image of the cat */
   img: Scalars['String'];
   /** The name of the cat */
   name: Scalars['String'];
+  /** The size of the cat */
+  size: Scalars['Float'];
   /** The type of cat */
   type: Scalars['String'];
+  /** The weigth of the cat */
+  weigth: Scalars['Float'];
 };
 
 export type CreateCrocodileInput = {
@@ -60,12 +76,18 @@ export type CreateCrocodileInput = {
 
 export type Crocodile = {
   __typename?: 'Crocodile';
+  /** The description of the croc */
+  description: Scalars['String'];
   /** The image of the croc */
   img: Scalars['String'];
   /** The name of the croc */
   name: Scalars['String'];
+  /** The size of the croc */
+  size: Scalars['Float'];
   /** The type of croc */
   type: Scalars['String'];
+  /** The weigth of the croc */
+  weigth: Scalars['Float'];
 };
 
 export type Mutation = {
@@ -92,7 +114,7 @@ export type MutationUpdateCrocodileArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  animals: Array<Maybe<Animal>>;
+  animals?: Maybe<Array<Animal>>;
   cat: Cat;
   crocodile: Crocodile;
   crocodiles: Array<Crocodile>;
@@ -117,15 +139,19 @@ export type UpdateCrocodileInput = {
 export type AllAnimalsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AllAnimalsQuery = { __typename?: 'Query', animals: Array<{ __typename?: 'Animal', type: string, name: string, img: string } | null> };
+export type AllAnimalsQuery = { __typename?: 'Query', animals?: Array<{ __typename?: 'Animal', type: string, animal: string, name: string, img: string, description: string, size: number, weigth: number }> | null };
 
 
 export const AllAnimalsDocument = `
     query allAnimals {
   animals {
     type
+    animal
     name
     img
+    description
+    size
+    weigth
   }
 }
     `;

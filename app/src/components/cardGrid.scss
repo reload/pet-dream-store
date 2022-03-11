@@ -10,8 +10,10 @@
   width: 100%;
   height: 80vh;
   border-radius: 2rem;
+  border: solid 1px $violet-light-extra;
   background: linear-gradient(140deg, $violet-light, transparent);
   overflow: hidden;
+  margin-bottom: 1rem;
 
   &__image {
     width: 100%;
@@ -33,11 +35,194 @@
   &__headline {
     position: absolute;
     left: 2rem;
-    top: 50vh;
+    top: 48vh;
     color: $violet-light;
   }
 
+  &__type {
+    position: absolute;
+    left: 2rem;
+    top: 54vh;
+    color: $violet-light;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
   &__body {
-    padding: 0 1rem 0 1rem;
+    padding: 0 1.5rem 0 1.5rem;
+
+    &__description {
+      color: $violet;
+    }
+  }
+
+  .v-animal-avatar {
+    position: absolute;
+    right: 1rem;
+    top: 1vh;
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet-s-min) and (max-width: $breakpoint-tablet-s-max) {
+  .card {
+    width: 47%;
+    height: 60vh;
+    margin-right: 1rem;
+
+    &:nth-of-type(2n + 0) {
+      margin-right: 0;
+    }
+
+    &__image {
+      height: 35vh;
+      margin-top: 2vh;
+    }
+
+    &__gradient {
+      height: 10vh;
+      top: 27vh;
+    }
+
+    &__headline {
+      position: absolute;
+      left: 2rem;
+      top: 28vh;
+    }
+
+    &__type {
+      top: 34vh;
+    }
+
+    .v-animal-avatar {
+      right: 1rem;
+      top: 1vh;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet-l-min) and (max-width: $breakpoint-tablet-l-max) {
+  .card {
+    width: 31%;
+    height: 60vh;
+    margin-right: 1rem;
+
+    &:nth-of-type(3n + 0) {
+      margin-right: 0;
+    }
+
+    &__image {
+      height: 35vh;
+      margin-top: 2vh;
+    }
+
+    &__gradient {
+      height: 10vh;
+      top: 27vh;
+    }
+
+    &__headline {
+      position: absolute;
+      left: 2rem;
+      top: 28vh;
+    }
+
+    &__type {
+      top: 34vh;
+    }
+
+    .v-animal-avatar {
+      right: 1rem;
+      top: 1vh;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-desktop-s-min) and (max-width: $breakpoint-desktop-s-max) {
+  .card {
+    width: 23%;
+    height: 50vh;
+    margin-right: 1rem;
+
+    &:nth-of-type(4n + 0) {
+      margin-right: 0;
+    }
+
+    &__image {
+      height: 30vh;
+      margin-top: 2vh;
+    }
+
+    &__gradient {
+      height: 10vh;
+      top: 22vh;
+    }
+
+    &__headline {
+      position: absolute;
+      left: 2rem;
+      top: 23vh;
+    }
+
+    &__type {
+      top: 29vh;
+    }
+
+    .v-animal-avatar {
+      right: 1rem;
+      top: 1vh;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-desktop-l) {
+  .card {
+    width: 15%;
+    height: 45vh;
+    margin-right: 1rem;
+
+    &:nth-of-type(6n + 0) {
+      margin-right: 0;
+    }
+
+    &__image {
+      height: 28vh;
+      margin-top: 2vh;
+    }
+
+    &__gradient {
+      height: 10vh;
+      top: 20vh;
+    }
+
+    &__headline {
+      position: absolute;
+      left: 2rem;
+      top: 21vh;
+    }
+
+    &__type {
+      top: 27vh;
+    }
+
+    &__body {
+      &__description {
+        font-size: 0.9rem;
+      }
+    }
+
+    .v-animal-avatar {
+      right: 1rem;
+      top: 1vh;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 }

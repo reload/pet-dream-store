@@ -33,9 +33,7 @@ const CardGrid: React.FC<Props> = ({ status, isFetching, data }) => {
             <span className="card__type">{animal.type}</span>
             <Animal
               name={`${animal.animal === "crocodile" ? "alligator" : "tiger"}`}
-              color={`${
-                animal.animal === "crocodile" ? "#7bb853" : "#f0cc55"
-              }`}
+              color={`${animal.animal === "crocodile" ? "#7bb853" : "#f0cc55"}`}
             />
             <div className="card__body">
               <p className="card__body__description">{animal.description}</p>

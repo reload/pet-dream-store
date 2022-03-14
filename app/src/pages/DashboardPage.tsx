@@ -1,9 +1,9 @@
 import { gql } from "graphql-request";
 import { useAllAnimalsQuery } from "../graphql/generated";
-import CardGrid from "./CardGrid";
-import About from "./About";
-import Contact from "./Contact";
-import Oopsie from "./Oopsie";
+import CardGrid from "../components/CardGrid";
+import About from "./AboutPage";
+import Contact from "./ContactPage";
+import Oopsie from "./OopsiePage";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 // graphQL query definition

@@ -1,6 +1,7 @@
 import React from "react";
 import { AllAnimalsQuery } from "../graphql/generated";
 import Animal from "react-animals";
+import { animalIcons, AnimalIconsInterface } from "../conf/animalIcons";
 
 // it is necessary to define the prop types here before they are recieved
 interface Props {
@@ -32,7 +33,9 @@ const CardGrid: React.FC<Props> = ({ status, isFetching, data }) => {
             <h2 className="card__headline">{animal.name}</h2>
             <span className="card__type">{animal.type}</span>
             <Animal
-              name={`${animal.animal === "crocodile" ? "alligator" : "tiger"}`}
+              name={
+                animalIcons[animal.animal as keyof AnimalIconsInterface].name
+              }
               color={`${animal.animal === "crocodile" ? "#7bb853" : "#f0cc55"}`}
             />
             <div className="card__body">

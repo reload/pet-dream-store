@@ -1,18 +1,16 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./pages/DashboardPage";
 
 // Create a client
 const queryClient = new QueryClient();
 
 function App() {
   return (
-    <>
-      {/* Provide the client to your App */}
-      <QueryClientProvider client={queryClient}>
-        <Dashboard />
-      </QueryClientProvider>
-    </>
+    // Provide the client to your App
+    <QueryClientProvider client={queryClient}>
+      <Dashboard />
+    </QueryClientProvider>
   );
 }
 

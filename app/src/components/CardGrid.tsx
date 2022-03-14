@@ -26,6 +26,10 @@ const CardGrid: React.FC<Props> = ({ status, isFetching, data }) => {
   return (
     <div className="animal_grid">
       {data.animals.map((animal, index) => {
+        const animalIcon = animalIcons[
+          animal.animal as keyof AnimalIconsInterface
+        ];
+
         return (
           <div className="card" key={index}>
             <img className="card__image" src={animal.img} alt={animal.name} />
@@ -33,10 +37,8 @@ const CardGrid: React.FC<Props> = ({ status, isFetching, data }) => {
             <h2 className="card__headline">{animal.name}</h2>
             <span className="card__type">{animal.type}</span>
             <Animal
-              name={
-                animalIcons[animal.animal as keyof AnimalIconsInterface].name
-              }
-              color={`${animal.animal === "crocodile" ? "#7bb853" : "#f0cc55"}`}
+              name={animalIcon.name}
+              color={animalIcon.color}
             />
             <div className="card__body">
               <p className="card__body__description">{animal.description}</p>

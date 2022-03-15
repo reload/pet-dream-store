@@ -36,7 +36,9 @@ const CardGrid: React.FC<Props> = ({ status, isFetching, data }) => {
               name={
                 animalIcons[animal.animal as keyof AnimalIconsInterface].name
               }
-              color={`${animal.animal === "crocodile" ? "#7bb853" : "#f0cc55"}`}
+              color={
+                animalIcons[animal.animal as keyof AnimalIconsInterface].color
+              }
             />
             <div className="card__body">
               <p className="card__body__description">{animal.description}</p>
